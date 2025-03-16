@@ -11,10 +11,35 @@ var index = 0; // Başlangıç indexi
 
 const container = document.querySelector(".card-deck");
 
-container.addEventListener("wheel", (event) => {
-    event.preventDefault(); // Varsayılan dikey scroll'u engelle
-    container.scrollLeft += event.deltaY; // Tekerlek hareketini yatay kaydırmaya çevir
+let isDown = false;
+let startX;
+let scrollLeft;
+
+container.addEventListener("mousedown", (e) => {
+    isDown = true;
+    container.classList.add("active"); // İsteğe bağlı: Sürüklerken bir efekt ekleyebilirsin
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
 });
+
+container.addEventListener("mouseleave", () => {
+    isDown = false;
+    container.classList.remove("active");
+});
+
+container.addEventListener("mouseup", () => {
+    isDown = false;
+    container.classList.remove("active");
+});
+
+container.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Hız ayarı, gerekirse değiştir
+    container.scrollLeft = scrollLeft - walk;
+});
+
 
 
 function switchActiveClass() {
