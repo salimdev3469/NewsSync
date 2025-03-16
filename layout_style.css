@@ -1,0 +1,359 @@
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*NAVBAR BAŞLANGIÇ*/
+#navbar {
+    z-index: 8;
+    position: fixed;
+    width: -webkit-fill-available;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(49, 49, 167);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    height: 4em;
+}
+
+.searchbox {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-search {
+    border: none;
+    height: 40px;
+    margin-left: 0.59em;
+    border-radius: 11px;
+    width: 90%;
+    outline: none;
+}
+
+#navbar .nav-btns {
+    font-size: 1em !important;
+    display: flex;
+    gap: 2em;
+}
+
+.nav-btns a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(35, 35, 166);
+    padding: .5em;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+#scroll-progress {
+    z-index: 14;
+    margin-top: 3em;
+    position: fixed;
+    top: 50px;
+    /* Navbarın hemen altına */
+    left: 0;
+    height: 8px;
+    /* İnce bar */
+    width: 0%;
+    /* Başlangıçta görünmez */
+    background: #007bff;
+    /* Mavi renk */
+    transition: width 0.1s linear;
+    /* Animasyon */
+}
+
+
+.categories {
+    position: fixed;
+    margin-top: 4em;
+    width: 100%;
+    background-color: rgb(35, 35, 166);
+    height: 2em;
+    z-index: 20;
+}
+
+.categories ul {
+    border-top: .1px solid #ffffff;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.category-active {
+    border-bottom: 3px solid white;
+}
+
+.categories ul li a:hover {
+    color: #eeff00;
+    border-bottom: 3px solid white;
+}
+
+
+
+
+.logo {
+    font-size: xx-large;
+    color: white;
+    text-decoration: none;
+}
+
+.right-nav-icons {
+    display: flex;
+    gap: 40px;
+}
+
+.collapse-bar,
+.search-icon {
+    display: none;
+}
+
+#offcanvas {
+    position: fixed;
+    display: none;
+    z-index: 12;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(255, 244, 244);
+}
+
+#offcanvas-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#offcanvas-down {
+    padding: 1em;
+}
+
+#offcanvas-header h3 {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+#offcanvas span {
+    margin-left: 0.7em;
+}
+
+.mobile-btns {
+    font-family: 'Times New Roman', Times, serif;
+    list-style: none;
+    font-size: 1.3em;
+    margin: .8em;
+    padding: 1em;
+}
+
+.mobile-btns a {
+    cursor: pointer;
+}
+
+.categories-mobile {
+    display: none;
+}
+
+.categories-mobile a {
+    color: black;
+    text-decoration: none;
+}
+
+#searchbox-mobile {
+    position: fixed;
+    z-index: 15;
+    display: none;
+    align-items: center;
+    border-radius: .7em;
+    margin-top: 4.9em;
+    height: 3em;
+    width: 60%;
+    background-color: rgb(49, 49, 167);
+    left: 20%;
+}
+
+#search-btn {
+    height: 2em;
+    background-color: black;
+    border-radius: .7em;
+}
+
+.scale-up {
+    transform: scale(1.05);
+}
+
+.scale-down {
+    transform: scale(1);
+}
+
+.slideInLeft {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+
+
+
+.slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:760px) {
+
+    #navbar .nav-btns,
+    .searchbox {
+        display: none;
+    }
+
+    .collapse-bar,
+    .search-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    #scroll-progress {
+        margin-top: 1em;
+    }
+
+}
+
+/*NAVBAR BİTİŞ*/
+
+/*FOOTER BAŞLANGIÇ*/
+footer {
+    gap: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(49, 49, 167);
+}
+
+footer span {
+    font-size: 3em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#footer-list {
+    cursor: pointer;
+    font-weight: 300;
+    gap: 21px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+footer p {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: none;
+    /* Başlangıçta gizli */
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+
+/*FOOTER BİTİŞ*/

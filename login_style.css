@@ -1,0 +1,10 @@
+.login-headline {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+.card {
+    -webkit-box-shadow: 2px 3px 300px 9px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 2px 3px 300px 9px rgba(0, 0, 0, 0.73);
+    box-shadow: 2px 3px 300px 9px rgb(0 0 0 / 28%);
+}
