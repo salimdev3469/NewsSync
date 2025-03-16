@@ -56,29 +56,52 @@ body {
 }
 
 #offcanvas {
-    position: absolute;
+    position: fixed;
     display: none;
-    z-index: 2;
+    z-index: 12;
     width: 50%;
     height: 100vh;
-    background-color: brown;
+    background-color: rgb(255, 244, 244);
+}
+
+#offcanvas-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#offcanvas-down {
+    padding: 1em;
+}
+
+#offcanvas-header h3 {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+#offcanvas span {
+    margin-left: 0.7em;
 }
 
 .mobile-btns {
     font-family: 'Times New Roman', Times, serif;
     list-style: none;
-    font-size: 2em;
+    font-size: 1.3em;
     margin: .8em;
+    padding: 1em;
 }
 
 #searchbox-mobile {
+    position: fixed;
+    z-index: 15;
     display: none;
     border-radius: .7em;
-    margin-top: .5em;
+    margin-top: 4.9em;
     height: 3em;
     width: 60%;
     background-color: rgb(49, 49, 167);
-    position: absolute;
     left: 20%;
 }
 
@@ -213,82 +236,44 @@ body {
     display: block;
 }
 
+@media screen and (max-width:570px) {
+    .img-span {
+        font-size: 1.5em;
+    }
+}
+
 
 /*GRIDS BAŞLANGIÇ*/
-
-#breaking-sec {
-    display: flex;
-
-}
-
-.see-also {
-    padding: 2em;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.see-also h5 {
-    border-bottom: blue 2px solid;
-}
-
-.see-also ul {
-    list-style: none;
-    cursor: pointer;
-}
 
 .section-header {
     border-bottom: red 3px solid;
     font-size: 4em;
-    margin-left: 2em;
+    margin: 2em 0.4em 0 0;
 }
 
-.grid-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.card-deck {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    overflow-x: auto;
+
 }
 
-.grid-img:hover {
-    transform: scale(1.05);
-    transition: 0.15s ease-in-out;
+.card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 250px;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
 }
 
+@media screen and (max-width:570px) {
+    .section-header {
+        margin-left: 0.5em;
+        font-size: 2em;
+    }
 
-
-#cssportal-grid {
-    display: grid;
-    padding: 2em;
-    gap: 5px;
-    width: 100%;
-    height: 100%;
-}
-
-#div1 {
-    grid-area: 1 / 2 / 3 / 4;
-    background-color: rgba(1, 191, 246, 0.5);
-}
-
-#div2 {
-    grid-area: 1 / 5 / 2 / 6;
-    background-color: rgba(29, 72, 18, 0.5);
-}
-
-#div3 {
-    grid-area: 2 / 5 / 4 / 6;
-    background-color: rgba(203, 178, 72, 0.5);
-}
-
-#div4 {
-    grid-area: 3 / 2 / 4 / 4;
-    background-color: rgba(246, 10, 157, 0.5);
-}
-
-#div5 {
-    grid-area: 1 / 4 / 4 / 5;
-    background-color: rgba(120, 75, 72, 0.5);
 }
 
 /*GRIDS BİTİŞ*/
@@ -300,6 +285,15 @@ body {
     grid-template-columns: repeat(4, 1fr);
     padding: 3em;
     gap: 20px;
+}
+
+@media screen and (max-width:570px) {
+    .cards {
+        padding: 1em;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
 }
 
 /*CARDS BİTİŞ*/

@@ -9,6 +9,13 @@ var navbar = document.getElementById("navbar");
 var banners = document.querySelectorAll(".imgs"); // Doğru sınıf seçimi
 var index = 0; // Başlangıç indexi
 
+const container = document.querySelector(".card-deck");
+
+container.addEventListener("wheel", (event) => {
+    event.preventDefault(); // Varsayılan dikey scroll'u engelle
+    container.scrollLeft += event.deltaY; // Tekerlek hareketini yatay kaydırmaya çevir
+});
+
 
 function switchActiveClass() {
     banners.forEach(el => el.classList.remove("active")); // Tüm `active`leri kaldır
@@ -39,24 +46,24 @@ window.addEventListener("scroll", () => {
 
 
 collapsebar.addEventListener("click", () => {
-    if (searchboxmobile.style.display == "block" && isOpen(offcanvas) == "Close") {
+    if (searchboxmobile.style.display == "flex" && isOpen(offcanvas) == "Close") {
         searchboxmobile.style.display = "none";
         offcanvas.classList.add("slideInLeft");
-        offcanvas.style.display = "block";
+        offcanvas.style.display = "flex";
     }
-    else if (offcanvas.style.display == "block") {
+    else if (offcanvas.style.display == "flex") {
         offcanvas.style.display = "none";
         searchboxmobile.style.display = "none";
     }
     else {
-        offcanvas.style.display = "block";
+        offcanvas.style.display = "flex";
         offcanvas.classList.add("slideInLeft");
     }
 });
 
 
 function isOpen(element) { //Offcanvas'ın o anki durumunu almak için
-    if (element.style.display == "block") {
+    if (element.style.display == "flex") {
         return "Open"
     }
     else {
