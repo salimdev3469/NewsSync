@@ -23,14 +23,15 @@ body {
     width: 30%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
 .nav-search {
-    margin: 0.7em;
+    height: 40px;
+    margin-left: 0.59em;
     border-radius: 11px;
     width: 90%;
-    height: 33px;
     outline: none;
 }
 
@@ -97,12 +98,19 @@ body {
     position: fixed;
     z-index: 15;
     display: none;
+    align-items: center;
     border-radius: .7em;
     margin-top: 4.9em;
     height: 3em;
     width: 60%;
     background-color: rgb(49, 49, 167);
     left: 20%;
+}
+
+#search-btn {
+    height: 2em;
+    background-color: black;
+    border-radius: .7em;
 }
 
 .scale-up {
@@ -248,7 +256,7 @@ body {
 .section-header {
     border-bottom: red 3px solid;
     font-size: 4em;
-    margin: 2em 0.4em 0 0;
+    margin-left: 1em;
 }
 
 .card-deck {
@@ -276,6 +284,8 @@ body {
 
 }
 
+
+
 /*GRIDS BİTİŞ*/
 
 /*CARDS BAŞLANGIÇ*/
@@ -283,6 +293,7 @@ body {
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
     padding: 3em;
     gap: 20px;
 }
@@ -293,8 +304,37 @@ body {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .card {
+        width: 20rem !important;
+    }
 
 }
+
+@media (min-width:651px) and (max-width:850px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .card {
+        width: 16rem !important;
+    }
+
+}
+
+@media (min-width:851px) and (max-width:1150px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        width: 17rem;
+    }
+
+    .card {
+        width: 18rem !important;
+    }
+
+}
+
+
 
 /*CARDS BİTİŞ*/
 

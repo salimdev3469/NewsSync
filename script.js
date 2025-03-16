@@ -74,15 +74,15 @@ function isOpen(element) { //Offcanvas'ın o anki durumunu almak için
 
 
 searchicon.addEventListener("click", () => {
-    if (searchboxmobile.style.display == "none" && offcanvas.style.display == "block") {
+    if (searchboxmobile.style.display == "none" && offcanvas.style.display == "flex") {
         offcanvas.style.display = "none";
-        searchboxmobile.style.display = "block";
+        searchboxmobile.style.display = "flex";
     }
-    else if (searchboxmobile.style.display == "block") {
+    else if (searchboxmobile.style.display == "flex") {
         searchboxmobile.style.display = "none";
     }
     else {
-        searchboxmobile.style.display = "block";
+        searchboxmobile.style.display = "flex";
         searchboxmobile.classList.add("slideInDown");
     }
 })
