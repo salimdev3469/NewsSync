@@ -9,6 +9,52 @@ var navbar = document.getElementById("navbar");
 var banners = document.querySelectorAll(".imgs"); // Doğru sınıf seçimi
 var index = 0; // Başlangıç indexi
 
+collapsebar.addEventListener("click", () => {
+    if (searchboxmobile.style.display == "flex" && isOpen(offcanvas) == "Close") {
+        searchboxmobile.style.display = "none";
+        offcanvas.classList.add("slideInLeft");
+        offcanvas.style.display = "flex";
+        progressBar.style.display = "none";
+    }
+    else if (offcanvas.style.display == "flex") {
+        offcanvas.style.display = "none";
+        searchboxmobile.style.display = "none";
+        progressBar.style.display = "block";
+    }
+    else {
+        progressBar.style.display = "none";
+        offcanvas.style.display = "flex";
+        offcanvas.classList.add("slideInLeft");
+    }
+});
+
+
+function isOpen(element) { //Offcanvas'ın o anki durumunu almak için
+    if (element.style.display == "flex") {
+        return "Open"
+    }
+    else {
+        return "Close"
+    }
+}
+
+
+
+searchicon.addEventListener("click", () => {
+    if (searchboxmobile.style.display == "none" && offcanvas.style.display == "flex") {
+        offcanvas.style.display = "none";
+        searchboxmobile.style.display = "flex";
+    }
+    else if (searchboxmobile.style.display == "flex") {
+        searchboxmobile.style.display = "none";
+    }
+    else {
+        searchboxmobile.style.display = "flex";
+        searchboxmobile.classList.add("slideInDown");
+    }
+})
+
+
 const fadeElements = document.querySelectorAll(".fade-in");
 
 const revealOnScroll = () => {
@@ -145,50 +191,6 @@ window.addEventListener("scroll", () => {
 })
 
 
-collapsebar.addEventListener("click", () => {
-    if (searchboxmobile.style.display == "flex" && isOpen(offcanvas) == "Close") {
-        searchboxmobile.style.display = "none";
-        offcanvas.classList.add("slideInLeft");
-        offcanvas.style.display = "flex";
-        progressBar.style.display = "none";
-    }
-    else if (offcanvas.style.display == "flex") {
-        offcanvas.style.display = "none";
-        searchboxmobile.style.display = "none";
-        progressBar.style.display = "block";
-    }
-    else {
-        progressBar.style.display = "none";
-        offcanvas.style.display = "flex";
-        offcanvas.classList.add("slideInLeft");
-    }
-});
-
-
-function isOpen(element) { //Offcanvas'ın o anki durumunu almak için
-    if (element.style.display == "flex") {
-        return "Open"
-    }
-    else {
-        return "Close"
-    }
-}
-
-
-
-searchicon.addEventListener("click", () => {
-    if (searchboxmobile.style.display == "none" && offcanvas.style.display == "flex") {
-        offcanvas.style.display = "none";
-        searchboxmobile.style.display = "flex";
-    }
-    else if (searchboxmobile.style.display == "flex") {
-        searchboxmobile.style.display = "none";
-    }
-    else {
-        searchboxmobile.style.display = "flex";
-        searchboxmobile.classList.add("slideInDown");
-    }
-})
 
 
 

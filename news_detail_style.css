@@ -1,5 +1,5 @@
 #news-body {
-
+    margin-left: 5em;
     padding: 3em;
     display: flex;
     flex-direction: column;
@@ -19,11 +19,12 @@
 }
 
 #news-description p {
+    width: 60%;
     margin-left: 2px;
 }
 
 #news-content {
-    padding: 2em;
+    margin-top: 2em;
     width: 100%;
 }
 
@@ -34,7 +35,7 @@
 
 #news-content p {
     font-weight: 500;
-    width: 90%;
+    width: 60%;
 }
 
 .news-img {
@@ -49,8 +50,30 @@
     object-fit: cover;
 }
 
+#likes {
+    margin-top: 1em;
+}
+
+.dislike-like {
+    background-color: black;
+    border-radius: 7px;
+}
+
 @media screen and (max-width:760px) {
     .news-img img {
+        width: 100%;
+    }
+
+    #news-body {
+        padding: 2.4em;
+        margin: 0;
+    }
+
+    #news-content p {
+        width: 100%;
+    }
+
+    #news-description p {
         width: 100%;
     }
 }
